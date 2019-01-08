@@ -6,19 +6,7 @@
 #define LABO_10_ENCODEUR_ANNEXE_H
 #include <string>
 #include <vector>
-/**
- * 
- * @param message
- * @param cle
- * @return 
- */
-std::string coder(const std::string& message, const std::vector<int>& cle);
-/**
- * @param message
- * @param cle
- * @return 
- */
-std::string decoder(const std::string& message, const std::vector<int>& cle);
 
+bool saisie(const std::string& message,std::vector<int>& listeValeur);
 
 #endif //LABO_10_ENCODEUR_ANNEXE_H

@@ -1,0 +1,8 @@
+//
+// Created by Arthur on 08.01.2019.
+//
+
+#ifndef LABO_10_ENCODEUR_ENCODEUR_H
+#define LABO_10_ENCODEUR_ENCODEUR_H
+
+#endif //LABO_10_ENCODEUR_ENCODEUR_H

@@ -9,4 +9,7 @@
 
 bool saisie(const std::string& message,std::vector<int>& listeValeur);
 
+bool saisieVecteur(const std::string& message,std::vector<int>& listeValeur,int nbVariables);
+
+void viderBuffer();
 #endif //LABO_10_ENCODEUR_ANNEXE_H

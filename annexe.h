@@ -1,15 +1,49 @@
-//
-// Created by Arthur on 08.01.2019.
-//
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 10_encodeur
+ Fichier     : annexe.h
+ Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
+ Date        : 14.01.2019
 
+ But         : <but>
+
+ Remarque(s) : <remarque>
+
+ Compilateur : MinGW-g++ 6.3.0
+ -----------------------------------------------------------------------------------
+*/
 #ifndef LABO_10_ENCODEUR_ANNEXE_H
 #define LABO_10_ENCODEUR_ANNEXE_H
 #include <string>
 #include <vector>
 
-bool saisie(const std::string& message,std::vector<int>& listeValeur);
+/**
+ * @brief Saisie d'une valeur (string) avec message personnalisable
+ * @param message message de personnalisation de la saisie
+ * @param valeur valeur retourné saisie par l'utilisateur
+ * @param MIN valeur minimale (par défaut = 0)
+ * @param MAX valeur maximale (par défaut = 10)
+ */
+int saisie(const std::string& message,std::string& valeur, const int& MIN = 0, const int& MAX = 10);
 
-bool saisieVecteur(const std::string& message,std::vector<int>& listeValeur,int nbVariables);
+/**
+ * @brief Saisie d'une valeur (string) avec message personnalisable
+ * @param message message de personnalisation de la saisie
+ * @param valeur valeur saisie par l'utilisateur
+ */
+std::string saisie(const std::string& message,std::string& valeur);
 
-void viderBuffer();
+/**
+ * @brief Saisie d'une liste de valeur (int) avec message personnalisable
+ * @param message message de personnalisation de la saisie
+ * @param listeValeur liste de valeurs saisies par l'utilisateur
+ * @param nbVariables nombre de valeur à saisir
+ */
+void saisieVecteur(const std::string& message,std::vector<int>& listeValeur,int nbVariables);
+
+/**
+ * @brief Vide le Buffer de cin jusqu'à un caractère
+ * @param CAR caractère souhaité
+ */
+void viderBuffer(const char CAR = '\n');
 #endif //LABO_10_ENCODEUR_ANNEXE_H

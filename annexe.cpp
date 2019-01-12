@@ -18,29 +18,32 @@
 
 using namespace std;
 
-void saisie(const std::string& message,int& valeur, const int& MIN, const int& MAX) {
+int saisie(const string& message,const string& msgErreur, const int MIN, const int MAX) {
    bool saisieValide;
-
+   int valeurSaisie;
    do {
       cout << message << " [" << MIN << "-" << MAX << "] : ";
 
       // Vérifie que la valeur entrée est valide et comprise entre les bornes
-      saisieValide = bool(cin >> valeur) and valeur >= MIN and valeur <= MAX;
+      saisieValide = bool(cin >> valeurSaisie) and valeurSaisie >= MIN and valeurSaisie <= MAX;
 
       // Répare le cin en cas d'erreur
       if (cin.fail()) {
+          cout << msgErreur << endl;
          cin.clear();
       }
       viderBuffer();
    } while(!saisieValide);
+   
+   return valeurSaisie;
 }
 
-void saisie(const std::string& message,std::string& valeur) {
+/*void saisie(const string& message,string& valeur) {
    cout << message << " : ";
    getline(cin, valeur);
-}
+}*/
 
-void saisieVecteur(const string& message,vector<int>& listeValeur,int nbVariables) {
+void saisieVecteur(const string& message,vector<int>& listeValeur,int nbVariables) {//remplirVecteur
    bool saisieValide;
    int  saisie;
 

@@ -1,13 +1,14 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 10_encodeur
+ Laboratoire : Labo_10_encodeur
  Fichier     : annexe.h
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
 
- But         : <but>
+ But         : Gérer les fonctions d'entrées sorties ainsi que des
+               fonctions particulières.
 
- Remarque(s) : <remarque>
+ Remarque(s) :
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
@@ -20,18 +21,18 @@
 /**
  * @brief Saisie d'une valeur (string) avec message personnalisable
  * @param message message de personnalisation de la saisie
- * @param valeur valeur retourné saisie par l'utilisateur
+ * @param msgErreur message d'erreur retourné lors d'une mauvaise saisie
  * @param MIN valeur minimale (par défaut = 0)
  * @param MAX valeur maximale (par défaut = 10)
  */
-int saisie(const std::string& message,std::string& valeur, const int& MIN = 0, const int& MAX = 10);
+int saisie(const std::string& message,const std::string msgErreur, const int MIN = 0, const int MAX = 10);
 
 /**
  * @brief Saisie d'une valeur (string) avec message personnalisable
  * @param message message de personnalisation de la saisie
  * @param valeur valeur saisie par l'utilisateur
  */
-std::string saisie(const std::string& message,std::string& valeur);
+//std::string saisie(const std::string& message,std::string& valeur);
 
 /**
  * @brief Saisie d'une liste de valeur (int) avec message personnalisable

@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 10_encodeur
+ Laboratoire : Labo_10_encodeur
  Fichier     : encodeur.h
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
@@ -28,7 +28,6 @@ void coder(const std::string& message, const std::vector<int>& cle);
  * @brief décode un message selon une clé
  * @param message message à décoder
  * @param cle clé de valeur pour décoder
- * @return 
  */
 void decoder(const std::string& message, const std::vector<int>& cle);
 

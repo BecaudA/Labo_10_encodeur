@@ -28,13 +28,6 @@
 int saisie(const std::string& message,const std::string& msgErreur, const int MIN = 0, const int MAX = 10);
 
 /**
- * @brief Saisie d'une valeur (string) avec message personnalisable
- * @param message message de personnalisation de la saisie
- * @param valeur valeur saisie par l'utilisateur
- */
-//std::string saisie(const std::string& message,std::string& valeur);
-
-/**
  * @brief Saisie d'une liste de valeur (int) avec message personnalisable
  * @param message message de personnalisation de la saisie
  * @param listeValeur liste de valeurs saisies par l'utilisateur

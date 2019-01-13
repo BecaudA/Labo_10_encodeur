@@ -39,12 +39,7 @@ int saisie(const string& message,const string& msgErreur, const int MIN, const i
    return valeurSaisie;
 }
 
-/*void saisie(const string& message,string& valeur) {
-   cout << message << " : ";
-   getline(cin, valeur);
-}*/
-
-void saisieVecteur(const string& message,vector<int>& listeValeur,const int nbVariables) {//remplirVecteur
+void saisieVecteur(const string& message,vector<int>& listeValeur,const int nbVariables) {
    bool saisieValide;
    int  saisie;
 

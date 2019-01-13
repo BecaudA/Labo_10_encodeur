@@ -1,13 +1,18 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 10_encodeur
- Fichier     : <nom du fichier>.cpp
+ Laboratoire : Labo_10_encodeur
+ Fichier     : main.cpp
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
 
- But         : <à compléter>
+ But         : Coder et decoder un message selon une clé les deux valeurs sont 
+               saisies par l'utilisateur.
+               Les erreurs de saisie doivent être gérées.
 
- Remarque(s) : <à compléter>
+ Remarque(s) : La clé entrée par l'utilisateur est mise sous-forme de vecteur
+               d'entier.
+               Le message est utilisé sous-forme de string.
+               Utilisation des librairies annexe et encodeur.
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
@@ -19,13 +24,11 @@
 
 using namespace std;
 
-void afficher(const string& vecteur);
-
 int main() {
-   const string msgSaisie          = "Entre le mot a coder : ",
-                msgErreurSaisie    = "Saisie incorrecte veuilliez recommencer",
-                msgSaisieTailleCle = "Entrez le nombre de valeur du vecteur : ",
-                msgSaisieCle       = "Entrez les valeurs de la cle : ";
+   const string msgSaisie          = "Entre le mot a coder",
+                msgErreurSaisie    = "Saisie incorrecte veuillez recommencer",
+                msgSaisieTailleCle = "Entrez le nombre de valeur du vecteur",
+                msgSaisieCle       = "Entrez les valeurs de la cle";
 
    string   message;
    unsigned nbValeurCle;
@@ -33,31 +36,28 @@ int main() {
    vector<int> cle;
    
    cout << "ce programme ..." << endl;
-   //L'utlisateur saisi le message qui va être encodé et décodé
-   cout << msgSaisie << endl;
-   getline(cin, message);
    
-   //Demande de saise du nombre de valeur de la clé
-   nbValeurCle = saisie(msgSaisieTailleCle,msgErreurSaisie, 1 , 10);
-   cle.resize(nbValeurCle);
+   // L'utilisateur saisi le message qui va être encodé et décodé
+   message = saisie(msgSaisie);
    
-   saisieVecteur(msgSaisieCle,cle,nbValeurCle);
+   do{
+   // Demande de saisie du nombre de valeur de la clé
+   nbValeurCle = saisie(msgSaisieTailleCle,msgErreurSaisie);
    
-   coder(message, cle);
-   cout << "Voici le message code : " << endl;
-   afficher(message);
+   //Remplissage du vecteur avec la liste de valeur saisie par l'utilisateur
+   cle = saisieVecteur(msgSaisieCle,nbValeurCle);
+   }while(cle.empty());
    
-   decoder(message, cle);
-   cout << "Voici le message decode : " << endl;
-   afficher(message);
+   if(coder(message, cle))
+   {
+    cout << "Voici le message code : ";
+    cout << message << endl;
+   }
+   if(decoder(message, cle))
+   {
+    cout << "Voici le message decode : ";
+    cout << message << endl;
+   }
 
    return EXIT_SUCCESS;
-}
-
-void afficher(const string& message){
-    for(size_t i = 0; i < message.size(); ++i)
-    {
-        cout << message[i];
-    }
-    cout << endl;
 }

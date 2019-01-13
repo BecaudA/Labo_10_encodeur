@@ -7,7 +7,8 @@
 
  But         : Permet d'encoder et décoder un message
 
- Remarque(s) : La clé permettant de coder et decoder est donnée sous fprme de vecteur d'entier
+ Remarque(s) : La clé permettant de coder et decoder est donnée sous forme de vecteur
+               d'entier
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
@@ -21,14 +22,16 @@
  * @brief code un message selon une clé donnée
  * @param message message à coder
  * @param cle vecteur d'entier contenant les valeurs pour coder le message
+ * @return indique si la fonction s'est éxecuter correctement (succès = 1, échec = 0)
  */
-void coder(std::string& message, const std::vector<int>& cle);
+bool coder(std::string& message, const std::vector<int>& cle);
 
 /**
- * @brief décode un message selon une clé
+ * @brief décode un message selon une clé donnée
  * @param message message à décoder
- * @param cle cle vecteur d'entier contenant les valeurs pour decoder le message
+ * @param cle vecteur d'entier contenant les valeurs pour decoder le message
+ * @return indique si la fonction s'est éxecuter correctement (succès = 1, échec = 0)
  */
-void decoder(std::string& message, const std::vector<int>& cle);
+bool decoder(std::string& message, const std::vector<int>& cle);
 
 #endif //LABO_10_ENCODEUR_ENCODEUR_H

@@ -1,14 +1,9 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : Labo_10_encodeur
- Fichier     : annexe.h
+ Fichier     : annexe.cpp
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
-
- But         : Gérer les fonctions d'entrées sorties ainsi que des
-               fonctions particulières.
-
- Remarque(s) :
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
@@ -29,8 +24,8 @@ int saisie(const string& message,const string& msgErreur, const int MIN, const i
       saisieValide = bool(cin >> valeurSaisie) and valeurSaisie >= MIN and valeurSaisie <= MAX;
 
       // Répare le cin en cas d'erreur
-      if (cin.fail()) {
-          cout << msgErreur << endl;
+      if (!saisieValide) {
+         cout << msgErreur << endl;
          cin.clear();
       }
       viderBuffer();
@@ -39,29 +34,43 @@ int saisie(const string& message,const string& msgErreur, const int MIN, const i
    return valeurSaisie;
 }
 
-void saisieVecteur(const string& message,vector<int>& listeValeur,const int nbVariables) {
+string saisie(const string& message){
+    string valeurSaisie;
+    cout << message << " : ";
+    getline(cin, valeurSaisie);
+    return valeurSaisie;
+}
+
+vector<int> saisieVecteur(const string& message,const int nbVariables) {
    bool saisieValide;
-   int  saisie;
+   int  valeurSaisie;
+   vector<int> listeValeur;
+   if(nbVariables > 0)
+   {
+    cout << message << " : " << endl;
 
-   cout << message << " : " << endl;
+    for(size_t i = 0; i < (unsigned)nbVariables; ++i) {
+       do {
+          // Indice des saisies
+          cout << "  #" << i + 1 << " : ";
 
-   for(size_t i = 0; i < (unsigned)nbVariables; ++i) {
-      do {
-         // Indice des saisies
-         cout << "  #" << i + 1 << " : ";
+          // Vérifie que la valeur entrée est valide
+          saisieValide = bool(cin >> valeurSaisie);
 
-         // Vérifie que la valeur entrée est valide
-         saisieValide = bool(cin >> saisie);
-
-         // Répare le cin en cas d'erreur ou sinon ajoute la saisie à la liste
-         if (cin.fail()) {
-            cin.clear();
-         } else {
-            listeValeur[i] = saisie;
-         }
-         viderBuffer();
-      } while(!saisieValide);
+          // Répare le cin en cas d'erreur ou sinon ajoute la valeur saisie à la liste
+          if (cin.fail()) {
+             cin.clear();
+          } else {
+             listeValeur.push_back(valeurSaisie);
+          }
+          viderBuffer();
+       } while(!saisieValide);
+     }
    }
+   else{
+       cout << "Le nombre de valeur souhaite est insuffisant pour executer le sous-programme (>0)" << endl;
+   }
+   return listeValeur;
 }
 
 void viderBuffer(const char CAR) {

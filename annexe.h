@@ -19,13 +19,13 @@
 #include <vector>
 
 /**
- * @brief Saisie d'une valeur (string) avec message personnalisable
+ * @brief Saisie d'une valeur (int) avec message personnalisable
  * @param message message de personnalisation de la saisie
  * @param msgErreur message d'erreur retourné lors d'une mauvaise saisie
- * @param MIN valeur minimale (par défaut = 0)
- * @param MAX valeur maximale (par défaut = 10)
+ * @param MIN valeur minimale pouvant être rentrée (par défaut = 0)
+ * @param MAX valeur maximale pouvant être rentrée (par défaut = 10)
  */
-int saisie(const std::string& message,const std::string msgErreur, const int MIN = 0, const int MAX = 10);
+int saisie(const std::string& message,const std::string& msgErreur, const int MIN = 0, const int MAX = 10);
 
 /**
  * @brief Saisie d'une valeur (string) avec message personnalisable
@@ -40,7 +40,7 @@ int saisie(const std::string& message,const std::string msgErreur, const int MIN
  * @param listeValeur liste de valeurs saisies par l'utilisateur
  * @param nbVariables nombre de valeur à saisir
  */
-void saisieVecteur(const std::string& message,std::vector<int>& listeValeur,int nbVariables);
+void saisieVecteur(const std::string& message,std::vector<int>& listeValeur,const int nbVariables);
 
 /**
  * @brief Vide le Buffer de cin jusqu'à un caractère

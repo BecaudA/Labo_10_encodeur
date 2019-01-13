@@ -1,17 +1,18 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 10_encodeur
- Fichier     : annexe.cpp
+ Laboratoire : Labo_10_encodeur
+ Fichier     : annexe.h
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
 
- But         : <à compléter>
+ But         : Gérer les fonctions d'entrées sorties ainsi que des
+               fonctions particulières.
 
- Remarque(s) : <à compléter>
+ Remarque(s) :
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
- */
+*/
 #include "annexe.h"
 #include <iostream>
 #include <limits>
@@ -43,13 +44,13 @@ int saisie(const string& message,const string& msgErreur, const int MIN, const i
    getline(cin, valeur);
 }*/
 
-void saisieVecteur(const string& message,vector<int>& listeValeur,int nbVariables) {//remplirVecteur
+void saisieVecteur(const string& message,vector<int>& listeValeur,const int nbVariables) {//remplirVecteur
    bool saisieValide;
    int  saisie;
 
-   cout << message << " : ";
+   cout << message << " : " << endl;
 
-   for(size_t i = 0; i < nbVariables; ++i) {
+   for(size_t i = 0; i < (unsigned)nbVariables; ++i) {
       do {
          // Indice des saisies
          cout << "  #" << i + 1 << " : ";
@@ -57,11 +58,11 @@ void saisieVecteur(const string& message,vector<int>& listeValeur,int nbVariable
          // Vérifie que la valeur entrée est valide
          saisieValide = bool(cin >> saisie);
 
-         // Répare le cin en cas d'erreur ou ajoute la saisie à la liste
+         // Répare le cin en cas d'erreur ou sinon ajoute la saisie à la liste
          if (cin.fail()) {
             cin.clear();
          } else {
-            listeValeur.push_back(saisie);
+            listeValeur[i] = saisie;
          }
          viderBuffer();
       } while(!saisieValide);

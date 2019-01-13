@@ -39,6 +39,10 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <commandLine>-Wall -Wconversion -Wextra -pedantic</commandLine>
+        </ccTool>
       </compileType>
       <item path="annexe.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -63,6 +67,7 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>8</standard>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>

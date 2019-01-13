@@ -1,18 +1,17 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 10_encodeur
- Fichier     : encodeur.cpp
+ Laboratoire : Labo_10_encodeur
+ Fichier     : encodeur.h
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
 
- But         : <à compléter>
+ But         : Permet d'encoder et décoder un message
 
- Remarque(s) : <à compléter>
+ Remarque(s) : La clé permettant de coder et decoder est donnée sous fprme de vecteur d'entier
 
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
- */
-
+*/
 #include "encodeur.h"
 
 using namespace std;

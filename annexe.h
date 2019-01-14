@@ -15,6 +15,7 @@
 */
 #ifndef LABO_10_ENCODEUR_ANNEXE_H
 #define LABO_10_ENCODEUR_ANNEXE_H
+
 #include <string>
 #include <vector>
 
@@ -42,11 +43,12 @@ std::string saisieString(const std::string& message, const std::string& msgErreu
  * @param listeValeur futur liste de valeurs saisies par l'utilisateur
  * @param nbVariables nombre de valeurs à saisir
  */
-std::vector<int> saisieVecteur(const std::string& message,const int nbVariables);
+std::vector<int> saisieVecteur(const std::string& message, const int nbVariables);
 
 /**
  * @brief Vide le Buffer jusqu'à un caractère donné
  * @param CAR caractère jusqu'où le buffer doit être vidé (par défaut = '\n')
  */
 void viderBuffer(const char CAR = '\n');
+
 #endif //LABO_10_ENCODEUR_ANNEXE_H

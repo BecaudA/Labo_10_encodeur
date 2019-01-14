@@ -5,7 +5,7 @@
  Auteur(s)   : Arthur Bécaud & Stéphane Teixeira Carvalho
  Date        : 14.01.2019
 
- But         : Coder et decoder un message selon une clé les deux valeurs sont 
+ But         : Coder et décoder un message selon une clé, les deux valeurs sont
                saisies par l'utilisateur.
                Les erreurs de saisie doivent être gérées.
 
@@ -30,13 +30,13 @@ int main() {
                 msgSaisieTailleCle = "Entrez le nombre de valeur du vecteur",
                 msgSaisieCle       = "Entrez les valeurs de la cle";
 
-   string   message;
-   unsigned nbValeurCle;
-   
-   vector<int> cle;
-   
-   cout << "ce programme ..." << endl;
-   
+   string       message;
+   unsigned     nbValeurCle;
+
+   vector<int>  cle;
+
+   cout << "Ce programme ..." << endl;
+
    // L'utilisateur saisi le message qui va être encodé et décodé
    message = saisieString(msgSaisie, msgErreurSaisie);
    
@@ -53,10 +53,10 @@ int main() {
     cout << "Voici le message code : ";
     cout << message << endl;
    }
-   if(decoder(message, cle))
-   {
-    cout << "Voici le message decode : ";
-    cout << message << endl;
+
+   if (decoder(message, cle)) {
+      cout << "Voici le message decode : ";
+      cout << message << endl;
    }
 
    return EXIT_SUCCESS;

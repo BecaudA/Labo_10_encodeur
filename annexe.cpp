@@ -17,6 +17,7 @@ using namespace std;
 int saisieEntier(const string& message,const string& msgErreur, const int MIN, const int MAX) {
    bool saisieValide;
    int valeurSaisie;
+
    do {
       cout << message << " [" << MIN << "-" << MAX << "] : ";
 
@@ -29,8 +30,8 @@ int saisieEntier(const string& message,const string& msgErreur, const int MIN, c
          cin.clear();
       }
       viderBuffer();
-   } while(!saisieValide);
-   
+   } while (!saisieValide);
+
    return valeurSaisie;
 }
 
@@ -47,34 +48,33 @@ string saisieString(const string& message,const string& msgErreur){
     return valeurSaisie;
 }
 
-vector<int> saisieVecteur(const string& message,const int nbVariables) {
+vector<int> saisieVecteur(const string& message, const int nbVariables) {
    bool saisieValide;
-   int  valeurSaisie;
+   int valeurSaisie;
    vector<int> listeValeur;
-   if(nbVariables > 0)
-   {
-    cout << message << " : " << endl;
 
-    for(size_t i = 0; i < (unsigned)nbVariables; ++i) {
-       do {
-          // Indice des saisies
-          cout << "  #" << i + 1 << " : ";
+   if (nbVariables > 0) {
+      cout << message << " : " << endl;
 
-          // Vérifie que la valeur entrée est valide
-          saisieValide = bool(cin >> valeurSaisie);
+      for (size_t i = 0; i < (unsigned) nbVariables; ++i) {
+         do {
+            // Indice des saisies
+            cout << "  #" << i + 1 << " : ";
 
-          // Répare le cin en cas d'erreur ou sinon ajoute la valeur saisie à la liste
-          if (cin.fail()) {
-             cin.clear();
-          } else {
-             listeValeur.push_back(valeurSaisie);
-          }
-          viderBuffer();
-       } while(!saisieValide);
-     }
-   }
-   else{
-       cout << "Le nombre de valeur souhaite est insuffisant pour executer le sous-programme (>0)" << endl;
+            // Vérifie que la valeur entrée est valide
+            saisieValide = bool(cin >> valeurSaisie);
+
+            // Répare le cin en cas d'erreur ou ajoute la valeur saisie à la liste
+            if (cin.fail()) {
+               cin.clear();
+            } else {
+               listeValeur.push_back(valeurSaisie);
+            }
+            viderBuffer();
+         } while (!saisieValide);
+      }
+   } else {
+      cout << "Le nombre de valeur souhaite est insuffisant pour executer le sous-programme (>0)" << endl;
    }
    return listeValeur;
 }

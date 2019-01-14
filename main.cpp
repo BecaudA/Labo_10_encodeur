@@ -41,7 +41,7 @@ int main() {
    message = saisieString(msgSaisie, msgErreurSaisie);
    
    do{
-   // Demande de saisie du nombre de valeur de la clé
+    // Demande de saisie du nombre de valeur de la clé
    nbValeurCle = saisieEntier(msgSaisieTailleCle,msgErreurSaisie);
    
    //Remplissage du vecteur avec la liste de valeur saisie par l'utilisateur

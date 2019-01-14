@@ -25,7 +25,7 @@ int saisieEntier(const string& message,const string& msgErreur, const int MIN, c
       saisieValide = bool(cin >> valeurSaisie) and valeurSaisie >= MIN and valeurSaisie <= MAX;
 
       // Répare le cin en cas d'erreur
-      if (!saisieValide) {
+      if (!saisieValide or valeurSaisie == 0) {
          cout << msgErreur << endl;
          cin.clear();
       }
@@ -40,6 +40,7 @@ string saisieString(const string& message,const string& msgErreur){
     do{
         cout << message << " : ";
         getline(cin, valeurSaisie);
+        //Si la valeur est vide affichage du message d'erreur
         if(valeurSaisie.empty())
         {
             cout << msgErreur << endl;

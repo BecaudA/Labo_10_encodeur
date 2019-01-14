@@ -38,11 +38,11 @@ int main() {
    cout << "ce programme ..." << endl;
    
    // L'utilisateur saisi le message qui va être encodé et décodé
-   message = saisie(msgSaisie);
+   message = saisieString(msgSaisie, msgErreurSaisie);
    
    do{
    // Demande de saisie du nombre de valeur de la clé
-   nbValeurCle = saisie(msgSaisieTailleCle,msgErreurSaisie);
+   nbValeurCle = saisieEntier(msgSaisieTailleCle,msgErreurSaisie);
    
    //Remplissage du vecteur avec la liste de valeur saisie par l'utilisateur
    cle = saisieVecteur(msgSaisieCle,nbValeurCle);

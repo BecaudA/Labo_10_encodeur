@@ -14,7 +14,7 @@
 
 using namespace std;
 
-int saisie(const string& message,const string& msgErreur, const int MIN, const int MAX) {
+int saisieEntier(const string& message,const string& msgErreur, const int MIN, const int MAX) {
    bool saisieValide;
    int valeurSaisie;
    do {
@@ -34,10 +34,16 @@ int saisie(const string& message,const string& msgErreur, const int MIN, const i
    return valeurSaisie;
 }
 
-string saisie(const string& message){
+string saisieString(const string& message,const string& msgErreur){
     string valeurSaisie;
-    cout << message << " : ";
-    getline(cin, valeurSaisie);
+    do{
+        cout << message << " : ";
+        getline(cin, valeurSaisie);
+        if(valeurSaisie.empty())
+        {
+            cout << msgErreur << endl;
+        }
+    }while(valeurSaisie.empty());
     return valeurSaisie;
 }
 

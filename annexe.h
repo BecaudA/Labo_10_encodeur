@@ -26,14 +26,15 @@
  * @param MAX valeur maximale pouvant être rentrée (par défaut = 10)
  * @return un entier contenant la valeur saisie par l'utilisateur
  */
-int saisie(const std::string& message,const std::string& msgErreur, const int MIN = 1, const int MAX = 10);
+int saisieEntier(const std::string& message,const std::string& msgErreur, const int MIN = 1, const int MAX = 10);
 
 /**
  * @brief Saisie d'une valeur (string) avec message personnalisable
  * @param message message de personnalisation de la saisie
+ * @param msgErreur message d'erreur retourné lors d'une mauvaise saisie
  * @return un string contenant la valeur saisie par l'utilisateur
  */
-std::string saisie(const std::string& message);
+std::string saisieString(const std::string& message, const std::string& msgErreur);
 
 /**
  * @brief Saisie d'une liste de valeur (int) avec message personnalisable
